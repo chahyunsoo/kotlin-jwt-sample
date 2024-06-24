@@ -37,6 +37,10 @@ kotlin {
 	}
 }
 
+noArg {
+	annotation("jakarta.persistence.Entity")
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
