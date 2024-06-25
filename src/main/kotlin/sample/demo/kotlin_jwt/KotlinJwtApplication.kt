@@ -1,4 +1,4 @@
-package kotlin.demo.kotlin_jwt
+package sample.demo.kotlin_jwt
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

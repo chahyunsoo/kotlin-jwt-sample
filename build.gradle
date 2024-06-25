@@ -6,7 +6,7 @@ plugins {
 	id 'org.jetbrains.kotlin.plugin.spring' version '1.9.24'
 }
 
-group = 'kotlin.demo'
+group = 'sample.demo'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -35,6 +35,10 @@ kotlin {
 	compilerOptions {
 		freeCompilerArgs.addAll '-Xjsr305=strict'
 	}
+}
+
+allOpen {
+	annotation("jakarta.persistence.Entity")
 }
 
 noArg {
