@@ -1,7 +1,6 @@
-package sample.demo.kotlin_jwt.storage
+package sample.demo.kotlin_jwt.storage.entity
 
 import jakarta.persistence.*
-import sample.demo.kotlin_jwt.domain.Gender
 import java.time.LocalDate
 
 @Entity
@@ -10,7 +9,7 @@ import java.time.LocalDate
 )
 class MemberEntity(
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long? = null,
 
         @Column(name = "login_id", length = 30, updatable = false)
@@ -19,8 +18,8 @@ class MemberEntity(
         @Column(name = "password", length = 30)
         var password: String,
 
-        @Column(name = "name", length = 20)
-        var name: String,
+        @Column(name = "nickname", length = 20)
+        var nickname: String,
 
         @Column(name = "birth_date")
         @Temporal(TemporalType.DATE)
