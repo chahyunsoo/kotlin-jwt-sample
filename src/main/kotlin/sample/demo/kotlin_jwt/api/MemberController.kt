@@ -1,5 +1,6 @@
 package sample.demo.kotlin_jwt.api
 
+import jakarta.validation.Valid
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PostMapping
@@ -15,9 +16,8 @@ class MemberController(
         private val memberService: MemberService
 ) {
     @PostMapping("/sign-up")
-    fun singUp(@RequestBody memberRequest: MemberRequest): ResponseEntity<String> {
-        return ResponseEntity.ok(memberService.signUp(memberRequest))
-
+    fun singUp(@RequestBody @Valid memberRequest: MemberRequest): String {
+        return memberService.signUp(memberRequest)
     }
 
 }

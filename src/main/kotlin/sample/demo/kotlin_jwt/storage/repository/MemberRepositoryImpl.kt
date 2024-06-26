@@ -8,7 +8,7 @@ import sample.demo.kotlin_jwt.domain.MemberRepository
 class MemberRepositoryImpl(
         private val memberJpaRepository: MemberJpaRepository
 ) : MemberRepository {
-    override fun findByLoginId(loginId: String): Member? {
+    override fun findByLoginId(loginId: String?): Member? {
         return MemberMapper.toModel(
                 memberJpaRepository.findByLoginId(loginId)
         )
