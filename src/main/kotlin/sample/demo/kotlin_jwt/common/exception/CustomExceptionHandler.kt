@@ -28,6 +28,12 @@ class CustomExceptionHandler {
         return ResponseEntity(BaseResponse(ResultCode.FAIL.name, errors, ResultCode.FAIL.message), HttpStatus.BAD_REQUEST)
     }
 
+    @ExceptionHandler(InvalidTokenException::class)
+    protected fun inValidTokenException(exception: InvalidTokenException): ResponseEntity<BaseResponse<Map<String, String>>> {
+        val errors = mapOf(exception.filedName to (exception.message ?: "Not Excetpion Message"))
+        return ResponseEntity(BaseResponse(ResultCode.FAIL.name, errors, ResultCode.FAIL.message), HttpStatus.BAD_REQUEST)
+    }
+
     @ExceptionHandler(Exception::class)
     protected fun defaultException(exception: Exception): ResponseEntity<BaseResponse<Map<String, String>>> {
         val errors = mapOf("미처리 에러" to (exception.message ?: "Not Excetpion Message"))
