@@ -1,6 +1,5 @@
 package sample.demo.kotlin_jwt.common.jwt
 
-import ch.qos.logback.core.util.StringUtil
 import jakarta.servlet.FilterChain
 import jakarta.servlet.ServletRequest
 import jakarta.servlet.ServletResponse

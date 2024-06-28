@@ -1,7 +1,5 @@
 package sample.demo.kotlin_jwt.domain
 
-import java.time.LocalDate
-
 class Member(
         val id: Long?,
         val loginId: String?,
